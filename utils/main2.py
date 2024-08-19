@@ -50,15 +50,15 @@ pbar = tqdm(total=len(mt)*len(my_models), desc="Processing", unit="sample")
 
 for model_pl in my_models:
   print(f"Model played: {model_pl}")
-  # i = 0
-  # while len(llm_scores) < sample_size and i < len(all_indices):
-  #     idx = all_indices[i]
-  #     try:
-  #         question = mt.iloc[idx].iloc[0]
-  #         answer1 = mt.iloc[idx].iloc[1]
-  #         answer2 = mt.iloc[idx].iloc[2]
+  i = 0
+  while len(llm_scores) < sample_size and i < len(all_indices):
+      idx = all_indices[i]
+      try:
+          question = mt.iloc[idx].iloc[0]
+          answer1 = mt.iloc[idx].iloc[1]
+          answer2 = mt.iloc[idx].iloc[2]
 
-  #         human_scores.append(mt.iloc[idx].iloc[3])
+          human_scores.append(mt.iloc[idx].iloc[3])
 
   #         # Judge answers
   #         text = judge_answers(model_pl, 0, question, answer1, answer2)
