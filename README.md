@@ -31,6 +31,6 @@ The script `src/preprocess_mt_bench.py` processes the raw data into an Excel fil
 
 Run the preprocessing with:
 ```bash
-python src/preprocess_mt_bench.py
+python data/preprocess_mt_bench.py
 ```
 
