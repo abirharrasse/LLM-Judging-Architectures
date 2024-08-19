@@ -1,5 +1,5 @@
-from advocates_architectures.MORE_architecture import get_debate_scores2
-from advocates_architectures.SAMRE_architecture import get_multi_debate_scores_20
+from MORE_architecture import get_debate_scores2
+from SAMRE_architecture import get_multi_debate_scores_20
 from utils.util_adv import initiate_model
 
 
