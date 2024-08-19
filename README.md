@@ -72,14 +72,14 @@ os.environ['COHERE_API_KEY'] = ''
 ```
 ## Running the evaluation architectures: 
 #### Single Advocate Multi-Round Evaluation (SAMRE): 
-To run the SAMRE evaluation framework:
+To run the **SAMRE** evaluation framework:
 Begin by importing the required function:
 ```bash
 from experiments import samre_experiment
 ```
 then call the `samre_experiment` function with the appropriate parameters: 
 ```bash
-samre_experiment(model_pl, temperature, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
+samre_experiment(model, temperature, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
 ```
 Where:
 
@@ -93,3 +93,16 @@ Where:
 
 
 #### Multi-Advocate One-Round Evaluation (MORE) 
+
+To run the **MORE** evaluation framework:
+Begin by importing:
+```bash
+from experiments import more_experiment
+```
+then call the `more_experiment` function with the appropriate parameters: 
+```bash
+more_experiment(model_pl, temperature, question, answer1, answer2, n_advocates=3, investment=0.1, n_rounds=1)
+```
+Where:
+- **n_advocates**: The number of advocates involved in the evaluation.
+- **n_rounds**: The number of evaluation rounds to conduct.
