@@ -69,7 +69,7 @@ print(os.getcwd())
 Set the required API keys to run your experiments:
 ```bash
 os.environ['OPENAI_API_KEY'] = 'sk-'
-os.environ['TOGETHER_API_KEY'] = '
+os.environ['TOGETHER_API_KEY'] = '' 
 os.environ['CLAUDE_API_KEY'] = ''
 os.environ['GEMINI_API_KEY'] = ''
 os.environ['COHERE_API_KEY'] = ''
