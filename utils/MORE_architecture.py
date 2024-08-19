@@ -340,6 +340,6 @@ async def run_debate(question: str, answer1: str, answer2: str, investment: floa
 
 nest_asyncio.apply()
 
-def get_multi_debate_scores_20(question: str, answer1: str, answer2: str, investment: float = 0.1, n_round: int = 3, n_advocates: int = 3) -> List[str]:
+def more_scores(question: str, answer1: str, answer2: str, investment: float = 0.1, n_round: int = 3, n_advocates: int = 3) -> List[str]:
     loop = asyncio.get_event_loop()
     return loop.run_until_complete(run_debate(question, answer1, answer2, investment, n_round, n_advocates))
