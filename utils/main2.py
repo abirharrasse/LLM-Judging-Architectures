@@ -14,7 +14,7 @@ from advocates_architectures.arch_builder import judge_multi_advocates_20, judge
 
 
 
-os.environ['OPENAI_API_KEY'] = '"sk-aa"'
+os.environ['OPENAI_API_KEY'] = "sk-aa"
 os.environ['TOGETHER_API_KEY'] = ''
 os.environ['CLAUDE_API_KEY'] = ''
 os.environ['GEMINI_API_KEY'] = ''
