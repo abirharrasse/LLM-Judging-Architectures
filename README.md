@@ -33,11 +33,9 @@ Run the preprocessing with:
 ```bash
 python data/preprocess_mt_bench.py
 ```
-## Installation
+## Installation and Setup
 
 Our agentic architecture is built on **MetaGPT**, a framework designed to efficiently manage interactions between agents using shared memory.
-
-### Setup Instructions
 
 To use the MetaGPT framework, follow these steps:
 
