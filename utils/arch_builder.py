@@ -1,5 +1,5 @@
-from MORE_architecture import get_multi_debate_scores_20
-from SAMRE_architecture import get_debate_scores2 
+from MORE_architecture import more_scores
+from SAMRE_architecture import samre_scores 
 from util_adv import initiate_model
 
 models = {"opus": "claude-3-opus-20240229", "haiku": "claude-3-haiku-20240307", "sonnet": "claude-3-sonnet-20240229", "llama3_8": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
@@ -13,14 +13,14 @@ models_dict = {"llama3_8": "together", "llama3_70": "together", "llama3.1_8": "t
 
 def samre_arch(model, temp, question, answer1, answer2, n_advocates, investment, n_rounds):
   initiate_model(model, temp, models_dict[model])
-  scores = get_multi_debate_scores_20(question, answer1, answer2, n_advocates=n_advocates, investment=investment, n_round=n_rounds)
+  scores = more_scores(question, answer1, answer2, n_advocates=n_advocates, investment=investment, n_round=n_rounds)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores
   
 def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_juries):
   initiate_model(model, temperature, models_dict[model])
-  scores = get_debate_scores2(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_juries=n_juries)
+  scores = samre_scores(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_juries=n_juries)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores
