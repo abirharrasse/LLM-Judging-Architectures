@@ -96,6 +96,7 @@ for model_pl in my_models:
           print(f"LLM scores sim other: {llm_scores_sim_other}")
 
           # Judge 2 advocates
+          print('1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
           scores_lit, juries = judge2advocates_modified2(model_pl, 0, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
           scores_list = [ast.literal_eval(item) for item in scores_lit]
           if scores_list:
@@ -113,7 +114,7 @@ for model_pl in my_models:
 
           print(f"LLM juries: {scores_juries}")
 
-
+          print('22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222')
           #ma,y advocates
           scores_lit_many = judge_multi_advocates_20(model_pl, 0, question, answer1, answer2, n_advocates=3, investment=0.1, n_rounds=1)
           scores_list_many = [ast.literal_eval(item) for item in scores_lit_many]
@@ -130,7 +131,7 @@ for model_pl in my_models:
 
           # Update progress bar
           pbar.update(1)
-
+          print('33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333')
       except Exception as e:
           print(f"Error processing row {idx}: {e}")
           # Remove the appended scores if an error occurred
