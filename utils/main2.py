@@ -50,52 +50,52 @@ pbar = tqdm(total=len(mt)*len(my_models), desc="Processing", unit="sample")
 
 for model_pl in my_models:
   print(f"Model played: {model_pl}")
-  i = 0
-  while len(llm_scores) < sample_size and i < len(all_indices):
-      idx = all_indices[i]
-      try:
-          question = mt.iloc[idx].iloc[0]
-          answer1 = mt.iloc[idx].iloc[1]
-          answer2 = mt.iloc[idx].iloc[2]
+  # i = 0
+  # while len(llm_scores) < sample_size and i < len(all_indices):
+  #     idx = all_indices[i]
+  #     try:
+  #         question = mt.iloc[idx].iloc[0]
+  #         answer1 = mt.iloc[idx].iloc[1]
+  #         answer2 = mt.iloc[idx].iloc[2]
 
-          human_scores.append(mt.iloc[idx].iloc[3])
+  #         human_scores.append(mt.iloc[idx].iloc[3])
 
-          # Judge answers
-          text = judge_answers(model_pl, 0, question, answer1, answer2)
-          print(f"Judge answers text: {text}")
+  #         # Judge answers
+  #         text = judge_answers(model_pl, 0, question, answer1, answer2)
+  #         print(f"Judge answers text: {text}")
 
-          scores_match = re.search(r'\((\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)\)', text)
-          if scores_match:
-              scores_sim = scores_match.group()
-              print(f"Matched scores: {scores_sim}")
-              sc_sim = ast.literal_eval(scores_sim)
-              llm_scores_sim.append(1 if sc_sim[0] > sc_sim[1] else 0)
-          else:
-              print("No scores found in the text")
-              raise ValueError("No scores found in judge_answers output")
+  #         scores_match = re.search(r'\((\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)\)', text)
+  #         if scores_match:
+  #             scores_sim = scores_match.group()
+  #             print(f"Matched scores: {scores_sim}")
+  #             sc_sim = ast.literal_eval(scores_sim)
+  #             llm_scores_sim.append(1 if sc_sim[0] > sc_sim[1] else 0)
+  #         else:
+  #             print("No scores found in the text")
+  #             raise ValueError("No scores found in judge_answers output")
 
-          print(f"LLM scores sim: {llm_scores_sim}")
-
-
+  #         print(f"LLM scores sim: {llm_scores_sim}")
 
 
 
-          text_other = judge_answers_other(model_pl, 0, question, answer1, answer2)
-          print(f"Judge answers text other: {text_other}")
 
-          scores_match_other = re.search(r'\((\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)\)', text_other)
-          if scores_match_other:
-              scores_sim_other = scores_match_other.group()
-              print(f"Matched scores other: {scores_sim_other}")
-              sc_sim_other = ast.literal_eval(scores_sim_other)
-              llm_scores_sim_other.append(1 if sc_sim_other[0] > sc_sim_other[1] else 0)
-          else:
-              print("No scores found in the text other")
-              raise ValueError("No scores found in judge_answers output other")
 
-          print(f"LLM scores sim other: {llm_scores_sim_other}")
+  #         text_other = judge_answers_other(model_pl, 0, question, answer1, answer2)
+  #         print(f"Judge answers text other: {text_other}")
 
-          # Judge 2 advocates
+  #         scores_match_other = re.search(r'\((\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)\)', text_other)
+  #         if scores_match_other:
+  #             scores_sim_other = scores_match_other.group()
+  #             print(f"Matched scores other: {scores_sim_other}")
+  #             sc_sim_other = ast.literal_eval(scores_sim_other)
+  #             llm_scores_sim_other.append(1 if sc_sim_other[0] > sc_sim_other[1] else 0)
+  #         else:
+  #             print("No scores found in the text other")
+  #             raise ValueError("No scores found in judge_answers output other")
+
+  #         print(f"LLM scores sim other: {llm_scores_sim_other}")
+
+  #         # Judge 2 advocates
           print('1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
           scores_lit, juries = judge2advocates_modified2(model_pl, 0, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
           scores_list = [ast.literal_eval(item) for item in scores_lit]
