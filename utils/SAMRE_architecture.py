@@ -347,6 +347,6 @@ async def run_debate(question: str, answer1: str, answer2: str, investment: floa
         traceback.print_exc()
         return [], (0,0)
 
-def get_debate_scores2(question: str, answer1: str, answer2: str, investment: float = 0.1, max_rounds: int = 7, n_juries: int = 5) -> Tuple[List[str], Tuple[int, int]]:
+def samre_scores(question: str, answer1: str, answer2: str, investment: float = 0.1, max_rounds: int = 7, n_juries: int = 5) -> Tuple[List[str], Tuple[int, int]]:
     loop = asyncio.get_event_loop()
     return loop.run_until_complete(run_debate(question, answer1, answer2, investment, max_rounds, n_juries))
