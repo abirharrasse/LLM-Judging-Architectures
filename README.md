@@ -77,7 +77,7 @@ Begin by importing the required function:
 ```bash
 from experiments import samre_experiment
 ```
-then call the samre_experiment function with the appropriate parameters: 
+then call the `samre_experiment` function with the appropriate parameters: 
 ```bash
 samre_experiment(model_pl, temperature, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
 ```
