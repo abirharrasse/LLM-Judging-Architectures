@@ -40,10 +40,10 @@ Our agentic architecture is built on **MetaGPT**, a framework designed to effici
 To use the MetaGPT framework, follow these steps:
 
 1. **Clone the Repository**  
-   First, clone the repository and navigate to the relevant directory:
-   ```bash
-   git clone https://github.com/abirharrasse/LLM-Judging-Architectures  && cd LLM-Judging-Architectures/MetaGPT_LLM_advocates
-   ```
+First, clone the repository and navigate to the relevant directory:
+```bash
+git clone https://github.com/abirharrasse/LLM-Judging-Architectures  && cd LLM-Judging-Architectures/MetaGPT_LLM_advocates
+```
 2. **Install Dependencies**
  Install the necessary packages:
 ```bash
