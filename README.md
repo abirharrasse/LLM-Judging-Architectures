@@ -74,7 +74,8 @@ os.environ['CLAUDE_API_KEY'] = ''
 os.environ['GEMINI_API_KEY'] = ''
 os.environ['COHERE_API_KEY'] = ''
 ```
-## Running the evaluation architectures: 
+## Running the evaluation architectures
+
 #### Single Advocate Multi-Round Evaluation (SAMRE): 
 To run the **SAMRE** evaluation framework:
 Begin by importing the required function:
@@ -110,3 +111,11 @@ more_experiment(model_pl, temperature, question, answer1, answer2, n_advocates=3
 Where:
 - **n_advocates**: The number of advocates involved in the evaluation.
 - **n_rounds**: The number of evaluation rounds to conduct.
+
+
+## Full Dataset Evaluation
+
+To run our architecture on the full `mt-bench` dataset, use the following code:
+```bash
+!python utils/main.py
+```
