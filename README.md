@@ -33,4 +33,42 @@ Run the preprocessing with:
 ```bash
 python data/preprocess_mt_bench.py
 ```
+## Installation
 
+Our agentic architecture is built on **MetaGPT**, a framework designed to efficiently manage interactions between agents using shared memory.
+
+### Setup Instructions
+
+To use the MetaGPT framework, follow these steps:
+
+1. **Clone the Repository**  
+   First, clone the repository and navigate to the relevant directory:
+   ```bash
+   git clone https://github.com/abirharrasse/LLM-Judging-Architectures  && cd LLM-Judging-Architectures/MetaGPT_LLM_advocates
+   ```
+2. **Install Dependencies**
+ Install the necessary packages:
+```bash
+pip install --upgrade -e .
+pip install together -q
+```
+3. Initialize Configuration
+Set up the configuration file for the MetaGPT framework:
+```bash
+metagpt --init-config
+```
+Before running this command, ensure you're in the correct directory:
+```bash
+import os
+os.chdir('/content/LLM-Judging-Architectures/MetaGPT_LLM_advocates')
+print(os.getcwd())
+```
+4. Set API Keys
+Set the required API keys to run your experiments:
+```bash
+os.environ['OPENAI_API_KEY'] = 'sk-aa'
+os.environ['TOGETHER_API_KEY'] = 'c7a811e69a15309841c8651be4b6994bbcc88f33ff75990e9601343bedf0d63a'
+os.environ['CLAUDE_API_KEY'] = ''
+os.environ['GEMINI_API_KEY'] = ''
+os.environ['COHERE_API_KEY'] = ''
+```
