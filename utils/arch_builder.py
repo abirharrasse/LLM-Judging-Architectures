@@ -11,14 +11,14 @@ models = {"opus": "claude-3-opus-20240229", "haiku": "claude-3-haiku-20240307", 
 models_dict = {"llama3_8": "together", "llama3_70": "together", "llama3.1_8": "together",  "mistral": "together", "Qwen": "together", "Yi": "together", "gemma": 'together', "gpt-4-turbo": "openai",
                "gpt-3.5-turbo": "openai", "gpt-4o": "openai", "opus": "claude", "haiku": "claude", "sonnet": "claude"}
 
-def judge_multi_advocates_20(model, temp, question, answer1, answer2, n_advocates, investment, n_rounds):
+def samre_arch(model, temp, question, answer1, answer2, n_advocates, investment, n_rounds):
   initiate_model(model, temp, models_dict[model])
   scores = get_multi_debate_scores_20(question, answer1, answer2, n_advocates=n_advocates, investment=investment, n_round=n_rounds)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores
   
-def judge2advocates_modified2(model, temperature, question, answer1, answer2, investment, n_rounds, n_juries):
+def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_juries):
   initiate_model(model, temperature, models_dict[model])
   scores = get_debate_scores2(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_juries=n_juries)
   print("Returned Scores:", scores)
