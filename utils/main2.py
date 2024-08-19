@@ -9,7 +9,7 @@ from tqdm import tqdm
 import json
 from util_adv import initiate_model, average_scores
 from basemodel import judge_answers_other, judge_answers
-from advocates_architectures.arch_builder import judge_multi_advocates_20, judge2advocates_modified2
+from arch_builder import judge_multi_advocates_20, judge2advocates_modified2
 
 
 
