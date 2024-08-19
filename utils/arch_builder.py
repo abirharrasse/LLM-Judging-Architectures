@@ -1,6 +1,6 @@
 from MORE_architecture import get_multi_debate_scores_20
 from SAMRE_architecture import get_debate_scores2 
-from utils.util_adv import initiate_model
+from util_adv import initiate_model
 
 
 def judge_multi_advocates_20(model, temp, question, answer1, answer2, n_advocates, investment, n_rounds):
