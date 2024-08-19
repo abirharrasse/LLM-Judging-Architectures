@@ -115,7 +115,7 @@ Where:
 
 ## Full Dataset Evaluation
 
-To run our architecture on the full `mt-bench` dataset, use the following code:
+To execute our architectures on the entire `mt-bench` dataset and ompare it to the basemodel, use the following code:
 ```bash
 !python utils/main.py
 ```
