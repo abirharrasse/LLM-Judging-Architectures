@@ -44,13 +44,15 @@ First, clone the repository and navigate to the relevant directory:
 ```bash
 git clone https://github.com/abirharrasse/LLM-Judging-Architectures  && cd LLM-Judging-Architectures/MetaGPT_LLM_advocates
 ```
+
 2. **Install Dependencies**
- Install the necessary packages:
+Install the necessary packages:
 ```bash
 pip install --upgrade -e .
 pip install together -q
 ```
-3. Initialize Configuration
+
+3. **Initialize Configuration**
 Set up the configuration file for the MetaGPT framework:
 ```bash
 metagpt --init-config
@@ -61,7 +63,7 @@ import os
 os.chdir('/content/LLM-Judging-Architectures/MetaGPT_LLM_advocates')
 print(os.getcwd())
 ```
-4. Set API Keys
+4. **Set API Keys**
 Set the required API keys to run your experiments:
 ```bash
 os.environ['OPENAI_API_KEY'] = 'sk-aa'
