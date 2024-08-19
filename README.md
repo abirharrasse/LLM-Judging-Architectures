@@ -64,8 +64,8 @@ print(os.getcwd())
 4. Set API Keys
 Set the required API keys to run your experiments:
 ```bash
-os.environ['OPENAI_API_KEY'] = 'sk-aa'
-os.environ['TOGETHER_API_KEY'] = 'c7a811e69a15309841c8651be4b6994bbcc88f33ff75990e9601343bedf0d63a'
+os.environ['OPENAI_API_KEY'] = 'sk-'
+os.environ['TOGETHER_API_KEY'] = '
 os.environ['CLAUDE_API_KEY'] = ''
 os.environ['GEMINI_API_KEY'] = ''
 os.environ['COHERE_API_KEY'] = ''
