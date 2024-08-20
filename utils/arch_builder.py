@@ -13,14 +13,14 @@ models_dict = {"llama3_8": "together", "llama3_70": "together", "llama3.1_8": "t
 
 def samre_arch(model, temp, question, answer1, answer2, investment, n_rounds, n_juries):
   initiate_model(model, temp, models_dict[model])
-  scores, juries = samre_scores(question, answer1, answer2, investment=investment, n_round=n_rounds, n_juries=n_juries)
+  scores, juries = samre_scores(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_juries=n_juries)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores, juries
   
 def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_advocates):
   initiate_model(model, temperature, models_dict[model])
-  scores = more_scores(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_advocates=n_advocates)
+  scores = more_scores(question, answer1, answer2, investment=investment, n_round=n_rounds, n_advocates=n_advocates)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores
