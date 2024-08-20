@@ -3,11 +3,11 @@ import nest_asyncio
 import platform
 from typing import List, Tuple
 import re
-from metagpt.actions import Action
-from metagpt.logs import logger
-from metagpt.roles import Role
-from metagpt.schema import Message
-from metagpt.team import Team
+from MetaGPT_LLM_advocates.metagpt.actions import Action
+from MetaGPT_LLM_advocates.metagpt.logs import logger
+from MetaGPT_LLM_advocates.metagpt.roles import Role
+from MetaGPT_LLM_advocates.metagpt.schema import Message
+from MetaGPT_LLM_advocates.metagpt.team import Team
 import argparse
 
 print("Starting debate script...")
