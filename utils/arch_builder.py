@@ -18,7 +18,7 @@ def samre_arch(model, temp, question, answer1, answer2, investment, n_rounds, n_
   print("latest score", scores[-1])
   return scores, juries
   
-def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_advocates):
+def more_arch(model, temperature, question, answer1, answer2,  n_advocates, investment, n_rounds):
   initiate_model(model, temperature, models_dict[model])
   scores = more_scores(question, answer1, answer2, investment=investment, n_round=n_rounds, n_advocates=n_advocates)
   print("Returned Scores:", scores)
