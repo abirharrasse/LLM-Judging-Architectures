@@ -78,9 +78,11 @@ os.environ['COHERE_API_KEY'] = ''
 
 #### Single Advocate Multi-Round Evaluation (SAMRE): 
 To run the **SAMRE** evaluation framework:
-Begin by importing the required function:
+Begin by accessing the directory `LLM_Judging_Architectures`:
 ```bash
-from experiments import samre_experiment
+import os
+os.chdir('/content/LLM_Judging_Architectures')
+print(os.getcwd())
 ```
 then call the `samre_experiment` function with the appropriate parameters: 
 ```bash
@@ -101,9 +103,11 @@ Where:
 #### Multi-Advocate One-Round Evaluation (MORE) 
 
 To run the **MORE** evaluation framework:
-Begin by importing:
+Begin by accessing the directory `LLM_Judging_Architectures`:
 ```bash
-from experiments import more_experiment
+import os
+os.chdir('/content/LLM_Judging_Architectures')
+print(os.getcwd())
 ```
 then call the `more_experiment` function with the appropriate parameters: 
 ```bash
