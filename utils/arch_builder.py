@@ -11,16 +11,16 @@ models = {"opus": "claude-3-opus-20240229", "haiku": "claude-3-haiku-20240307", 
 models_dict = {"llama3_8": "together", "llama3_70": "together", "llama3.1_8": "together",  "mistral": "together", "Qwen": "together", "Yi": "together", "gemma": 'together', "gpt-4-turbo": "openai",
                "gpt-3.5-turbo": "openai", "gpt-4o": "openai", "opus": "claude", "haiku": "claude", "sonnet": "claude"}
 
-def samre_arch(model, temp, question, answer1, answer2, n_advocates, investment, n_rounds):
+def samre_arch(model, temp, question, answer1, answer2, investment, n_rounds, n_juries):
   initiate_model(model, temp, models_dict[model])
-  scores = more_scores(question, answer1, answer2, n_advocates=n_advocates, investment=investment, n_round=n_rounds)
+  scores, juries = samre_scores(question, answer1, answer2, investment=investment, n_round=n_rounds, n_juries=n_juries)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
-  return scores
+  return scores, juries
   
-def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_juries):
+def more_arch(model, temperature, question, answer1, answer2, investment, n_rounds, n_advocates):
   initiate_model(model, temperature, models_dict[model])
-  scores = samre_scores(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_juries=n_juries)
+  scores = more_scores(question, answer1, answer2, investment=investment, max_rounds=n_rounds, n_advocates=n_advocates)
   print("Returned Scores:", scores)
   print("latest score", scores[-1])
   return scores
