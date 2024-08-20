@@ -1,4 +1,4 @@
-from utils.arch_builder import samre_arch, more_arch
+from utils.arch_builder_exp import samre_arch, more_arch
 
 # Judge 2 advocates
 def samre_experiment(model_pl, temperature, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3):
