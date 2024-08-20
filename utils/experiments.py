@@ -1,6 +1,6 @@
 import argparse
 import ast
-from utils.arch_builder_exp import samre_arch, more_arch
+from arch_builder import samre_arch, more_arch
 
 # Function to average scores
 def average_scores(scores_list):
