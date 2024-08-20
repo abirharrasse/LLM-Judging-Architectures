@@ -111,7 +111,8 @@ print(os.getcwd())
 ```
 then call the `more_experiment` function with the appropriate parameters: 
 ```bash
-! python utils/experiments.py --experiment more --model_pl "mistral" --temperature 0.7 --question "What is the impact of AI on healthcare?" --answer1 "AI can improve diagnostic accuracy." --answer2 "AI might introduce bias in diagnosis." --investment 0.1 --n_rounds 4 --n_juries 3
+! python utils/experiments.py --experiment more --model_pl "mistral" --temperature 0.7 --question "How does AI influence education?" --answer1 "AI personalizes learning." --answer2 "AI could limit creativity." --n_advocates 2 --investment 3  --n_rounds 1
+
 
 ```
 Where:
