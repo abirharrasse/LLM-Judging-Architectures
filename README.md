@@ -84,7 +84,8 @@ from experiments import samre_experiment
 ```
 then call the `samre_experiment` function with the appropriate parameters: 
 ```bash
-samre_experiment(model, temperature, question, answer1, answer2, investment=0.1, n_rounds=4, n_juries=3)
+! python utils/experiments.py --experiment samre --model_pl "mistral" --temperature 0.7 --question "What is the impact of AI on healthcare?" --answer1 "AI can improve diagnostic accuracy." --answer2 "AI might introduce bias in diagnosis." --investment 0.1 --n_rounds 4 --n_juries 3
+
 ```
 Where:
 
@@ -106,7 +107,8 @@ from experiments import more_experiment
 ```
 then call the `more_experiment` function with the appropriate parameters: 
 ```bash
-more_experiment(model_pl, temperature, question, answer1, answer2, n_advocates=3, investment=0.1, n_rounds=1)
+! python utils/experiments.py --experiment more --model_pl "mistral" --temperature 0.7 --question "What is the impact of AI on healthcare?" --answer1 "AI can improve diagnostic accuracy." --answer2 "AI might introduce bias in diagnosis." --investment 0.1 --n_rounds 4 --n_juries 3
+
 ```
 Where:
 - **n_advocates**: The number of advocates involved in the evaluation.
